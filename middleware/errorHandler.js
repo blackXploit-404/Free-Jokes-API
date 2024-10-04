@@ -1,9 +1,8 @@
-const errorHandler = (err, req, res, next) => {
-    console.error(err.stack);
+// Custom error handler middleware
+export const errorHandler = (err, req, res, next) => {
+    console.error(err.stack); // Log error stack for debugging
     res.status(500).json({
-        status: 'error',
-        message: 'Internal Server Error',
+        message: "Something went wrong, please try again later.",
+        error: err.message,
     });
 };
-
-export { errorHandler };
