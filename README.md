@@ -1,12 +1,12 @@
-
 # Free Jokes API
 
-A simple and fun API that provides random jokes or a list of all jokes. Built using **Node.js** and **Express**. This API can fetch jokes either randomly or all at once, and can be easily integrated into any frontend.
+A fun and simple API that delivers random jokes or a list of jokes in multiple languages (English, Hindi, Bengali). This API, built using **Node.js** and **Express**, is perfect for fetching random jokes, language-specific jokes, or a complete list of jokes. With CORS support, it can be easily integrated into any frontend application.
 
 ## Features
 
-- Fetch a random joke.
+- Fetch a random joke from the collection.
 - Fetch all jokes.
+- Fetch jokes in a specific language (English, Hindi, Bengali).
 - CORS enabled for secure cross-origin requests.
 - Easy to deploy on platforms like Render.
 
@@ -15,7 +15,7 @@ A simple and fun API that provides random jokes or a list of all jokes. Built us
 ### 1. Get All Jokes
 - **URL**: `/api/jokes/all`
 - **Method**: `GET`
-- **Description**: Returns a list of all jokes.
+- **Description**: Returns a list of all jokes in all languages (English, Hindi, Bengali).
 - **Example Request**:
   ```bash
   curl https://jokes-api-test.onrender.com/api/jokes/all
@@ -24,10 +24,19 @@ A simple and fun API that provides random jokes or a list of all jokes. Built us
 ### 2. Get Random Joke
 - **URL**: `/api/jokes/random`
 - **Method**: `GET`
-- **Description**: Returns a random joke.
+- **Description**: Returns a random joke from the collection.
 - **Example Request**:
   ```bash
   curl https://jokes-api-test.onrender.com/api/jokes/random
+  ```
+
+### 3. Get Jokes by Language
+- **URL**: `/api/jokes/:language`
+- **Method**: `GET`
+- **Description**: Fetch jokes in a specific language by passing the language name in the URL (`English`, `Hindi`, or `Bengali`).
+- **Example Request**:
+  ```bash
+  curl https://jokes-api-test.onrender.com/api/jokes/hindi
   ```
 
 ## Technologies Used
@@ -59,28 +68,27 @@ A simple and fun API that provides random jokes or a list of all jokes. Built us
 
 ## Deployment
 
-You can deploy the Jokes API easily on Render. Follow the steps below:
+You can easily deploy the Jokes API on platforms like Render. Follow the steps below:
 
 ### Deploy to Render
 
-1. **Fork the Repository**: Fork the repository to your own GitHub account.
+1. **Fork the Repository**: Fork the repository to your GitHub account.
 2. **Create a Web Service**:
    - Sign up on [Render](https://render.com/).
-   - Create a new **Web Service** and connect it to your forked GitHub repository.
+   - Create a new **Web Service** and connect it to your forked repository.
    - Set the build command as `npm install` and start command as `npm start`.
-3. **Deploy**: Render will automatically build and deploy your application.
-4. **Access**: After deployment, you will get a public URL like `https://your-app.onrender.com`.
+3. **Deploy**: Render will automatically build and deploy your app.
+4. **Access**: Once deployed, you'll receive a public URL like `https://your-app.onrender.com`.
 
-For detailed deployment instructions, check out the [Render deployment guide](https://render.com/docs/deploy-node-express-app).
+For detailed deployment instructions, refer to the [Render deployment guide](https://render.com/docs/deploy-node-express-app).
 
 ## Example Deployed API
 
 Check out the live API on Render:
 - All Jokes: [https://jokes-api-test.onrender.com/api/jokes/all](https://jokes-api-test.onrender.com/api/jokes/all)
 - Random Joke: [https://jokes-api-test.onrender.com/api/jokes/random](https://jokes-api-test.onrender.com/api/jokes/random)
+- Jokes by Language: [https://jokes-api-test.onrender.com/api/jokes/hindi](https://jokes-api-test.onrender.com/api/jokes/hindi)
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
